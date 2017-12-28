@@ -1,0 +1,72 @@
+#playfield
+{
+	position: absolute;
+	left: 16px;
+	top: 4px;
+	background-repeat: repeat;
+	cursor: crosshair;
+}
+
+#speaker
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	font-family: monospace;
+	font-size: 1px;
+}
+
+#gamename
+{
+	position: absolute;
+	left: 820px;
+	top: 3px;
+	font-family: arial;
+	font-size: 32;
+}
+
+#score
+{
+	position: absolute;
+	left: 820px;
+	top: 48px;
+	font-family: monospace;
+	font-size: 12px;
+}
+
+#mapname
+{
+	position: absolute;
+	left: 820px;
+	top: 64px;
+	font-family: monospace;
+	font-size: 12px;
+}
+
+#ticker
+{
+	position: absolute;
+	left: 820px;
+	top: 200px;
+	font-family: monospace;
+	font-size: 10px;
+}
+
+#controls
+{
+	position: absolute;
+	left: 820px;
+	top: 500px;
+	font-family: monospace;
+	font-weight: bold;
+}
+
+.controlButton
+{
+	width: 128px;
+	margin-bottom: 3px;
+	text-align: left;
+	background-color: black;
+	color: orange;
+	border-color: orange;
+}

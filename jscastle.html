@@ -1,0 +1,96 @@
+<html>
+	<head>
+		<title>JSCASTLE &copy;2006-2008 Andrew Hill</title>
+
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+
+		<script type="text/javascript" src="scripts/engine/main.js"><!-- --></script>
+		<script type="text/javascript" src="scripts/engine/screen.js"><!-- --></script>
+		<script type="text/javascript" src="scripts/engine/sound.js"><!-- --></script>
+		<script type="text/javascript" src="scripts/engine/keyboard.js"><!-- --></script>
+		<script type="text/javascript" src="scripts/engine/sprite.js"><!-- --></script>	
+		<script type="text/javascript" src="scripts/engine/map.js"><!-- --></script>
+		<script type="text/javascript" src="scripts/engine/player.js"><!-- --></script>
+		<script type="text/javascript" src="scripts/engine/maploader.js"><!-- --></script>
+		<script type="text/javascript" src="scripts/engine/items.js"><!-- --></script>
+		<script type="text/javascript" src="scripts/engine/doors.js"><!-- --></script>
+
+		<!-- Following scripts supply our game data. Nb, some is still hardcoded into
+		     some of the other script files such as maploader, however these need to 
+				 be factored out so as to seperate the engine from the data for a game -->
+		<script type="text/javascript" src="scripts/content/monsters.js"><!-- --></script>
+		<script type="text/javascript" src="scripts/content/leveldata.js"><!-- --></script>
+		<script type="text/javascript" src="scripts/content/itemdata.js"><!-- --></script>
+		
+		<script type="text/javascript">
+
+			
+
+			//TODO - are speedX and speedY still being used anywhere? If not remove
+			//and if they are move them somewhere else.
+			speedX = 0.03;
+			speedY = 0.07;
+
+			sprites = new Array(); //TODO - this should be a property of Sprites
+			map = null; //TODO - make this a property of MapLoader, named currentMap
+
+			function test()
+			{
+				//player.x = map.mapToWorldX(10);
+				//player.y = map.mapToWorldY(2);
+				//Main.loadNewMap('Base of West Tower');
+
+				//player.x = map.mapToWorldX(10);
+				//player.y = map.mapToWorldY(17);
+				//Main.loadNewMap('Top of the West Tower');
+        
+        player.x = map.mapToWorldX(16);
+				player.y = map.mapToWorldY(16);
+				Main.loadNewMap('The West Tower (b)');
+
+				//player.x = map.mapToWorldX(1);
+				//player.y = map.mapToWorldY(14);
+				//Main.loadNewMap('The Plain of Sorrow');
+
+				//player.x = map.mapToWorldX(16);
+				//player.y = map.mapToWorldY(0);
+				//Main.loadNewMap('Base of West Tower');
+        //Main.loadNewMap('The Plain of Sorrow');
+
+				player.vx  = 0;				
+				player.vy = 0;
+
+				window.document.getElementById('testButton').blur();
+			}
+
+		</script>			
+
+		</style>
+	</head>
+	<body onload="Main.main()"
+				onkeydown="KeyBoard.handler(event,true);"
+				onkeyup="KeyBoard.handler(event,false);"
+				bgcolor="black" text="orange">
+		<div id="gamename">JSCASTLE</div>
+		<div id="ticker"></div>
+		<div id="score"></div>
+		<div id="playfield"></div>
+		<div id="controls">
+			<button id="stopButton" disabled="disabled" type="button" onclick="Main.stop()" class="controlButton">
+				<img border="0" src="images/pause.png" style="vertical-align: text-top;"/>&nbsp;Pause
+			</button><br/>
+			<button id="startButton" type="button" onclick="Main.start();" class="controlButton">
+				<img border="0" src="images/play.png" style="vertical-align: text-top;"/>&nbsp;Resume
+			</button><br/>
+			<button id="helpButton" type="button" onclick="Main.help();" class="controlButton">
+				<img border="0" src="images/help.png" style="vertical-align: text-top;"/>&nbsp;Help
+			</button><br/>
+			<button id="testButton" type="button" onclick="test();" class="controlButton">
+				<img border="0" src="images/action.png" style="vertical-align: text-top;"/>&nbsp;Test
+			</button><br/>
+		</div>
+		<div id="mapname">&nbsp;</div>
+		<div id="speaker"></div>
+		
+	</body>
+</html>
